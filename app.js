@@ -1,12 +1,10 @@
 const express = require("express");
-const https = require("https");
-const fs = require("fs");
 const axios = require("axios");
 const getSeason = require("./utils/getSeason");
 
 app = express();
 
-const host = "5.35.88.50";
+const host = "localhost";
 const port = 7000;
 
 app.use((req, res, next) => {
@@ -139,11 +137,6 @@ app.get("/score", (req, res) => {
   }
 });
 
-const options = {
-  key: fs.readFileSync("key.pem"),
-  cert: fs.readFileSync("cert.pem"),
-};
-
-https.createServer(options, app).listen(port, host, () => {
-  console.log("Server started on port 7000");
-});
+app.listen(port, host, () =>
+  console.log(`Server listens http://${host}:${port}`)
+);
