@@ -140,8 +140,12 @@ app.get("/score", (req, res) => {
 });
 
 const options = {
-  key: fs.readFileSync("key.pem"),
-  cert: fs.readFileSync("cert.pem"),
+  key: fs.readFileSync(
+    "492a95f8a6a5c02eda82599afd2098d11fda58c198c92e3dfd9b6ff7e7412f65"
+  ),
+  cert: fs.readFileSync(
+    "5fd15e07e1b511493ec43de15bb3227c4ce6177755097c9f194471eb2e3ec223"
+  ),
 };
 
 https.createServer(options, app).listen(port, host, () => {
