@@ -4,7 +4,7 @@ const getSeason = require("./utils/getSeason");
 
 app = express();
 
-const host = "localhost";
+const host = "5.35.88.50";
 const port = 7000;
 
 app.use((req, res, next) => {
