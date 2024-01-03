@@ -140,10 +140,14 @@ app.get("/score", (req, res) => {
 });
 
 const options = {
-  key: fs.readFileSync("key.pem"),
-  cert: fs.readFileSync("cert.pem"),
+  key: fs.readFileSync(
+    "/etc/letsencrypt/live/barca-server-myapp.ru/privkey.pem"
+  ),
+  cert: fs.readFileSync(
+    "/etc/letsencrypt/live/barca-server-myapp.ru/fullchain.pem"
+  ),
 };
 
 https.createServer(options, app).listen(port, () => {
-  console.log("Server started on port 3000");
+  console.log("Server started on port 7000");
 });
